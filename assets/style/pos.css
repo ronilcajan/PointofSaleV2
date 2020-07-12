@@ -1,0 +1,78 @@
+html,
+body {
+  height: 100%;
+  width: 99.7%;
+}
+
+body {
+  background-color: #323c47;
+}
+
+div.grand{
+	height: 90px;
+	background-color: black;
+	text-align: right;
+	border: 2px solid white;
+	color: #39ff14;
+	margin: 10px 0px 10px 0px;
+	border-radius: 5px;
+}
+p.mr-2.grand-total{
+	font-size: 40px;
+	margin-top: -10px;
+}
+
+#orders{
+	background-color: #f4f6f9;
+	height: 430px;
+	margin: 10px;
+	margin-top: 0px;
+	border-radius: 5px 5px 5px 5px;
+	border: 2px solid black;
+	cursor: pointer;
+}
+
+#product_search{
+	background-color: #f4f6f9;
+	height: 388px;
+	border: 2px solid black;
+	border-radius: 5px 5px 5px 5px;
+	cursor: pointer;
+}
+
+#pos-buttons{
+	font-size: 16px;
+	border-color: white;
+}
+
+input#customer {
+	border-radius: 0 !important;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: 2px solid gray;
+	background-color: transparent;
+	color:white;
+	padding-left: 0px;
+}
+input#discount {
+	border-radius: 0 !important;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-bottom: 2px solid gray;
+	background-color: transparent;
+	color:white;
+	padding-left: 0px;
+	padding-bottom: 0px;
+}
+/*===== remove input spinner for type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number]{
+	-moz-appearance:textfield;
+}
+/* ========== ends ============= */
