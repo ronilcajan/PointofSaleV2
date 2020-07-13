@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
         <img src="../assets/images/pos-icon.png" alt="AdminLTE Logo" class="brand-image" style="opacity: .8">
         <span class="brand-text font-weight-bold">POS.PHP</span>
     </a>
@@ -9,12 +9,21 @@
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <?php if(!empty($n)):?>
             <div class="image">
-                <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <img src="../assets/images/avatars/<?php echo $im ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block"><?php echo $n;?></a>
             </div>
+            <?php else: ?>
+                <div class="image">
+                <img src="../assets/images/avatars/avatar.png" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+                <a href="#" class="d-block">Your name</a>
+            </div>
+            <?php endif?>
         </div>
 
         <!-- Sidebar Menu -->
@@ -24,7 +33,7 @@
                with font-awesome or any other icon font library -->
                 <?php if(strpos($_SERVER['REQUEST_URI'],'pages')>0):?>
                 <li class="nav-item has-treeview menu-open">
-                    <a href="pages/dashboard.php" class="nav-link active">
+                    <a href="dashboard.php" class="nav-link active">
                         <i class="nav-icon fas fa-th-large"></i>
                         <p>Dashboard</p>
                     </a>

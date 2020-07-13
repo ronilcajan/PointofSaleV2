@@ -1,8 +1,6 @@
 <?php 
     include '../server/server.php';
-    if(!$_SESSION['username']){
-        header("location: ../login.php");
-    }
+    include '../model/check_auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

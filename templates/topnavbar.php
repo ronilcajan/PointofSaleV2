@@ -51,15 +51,15 @@
                 </a>   
                 <?php endif ?>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <button type="button" class="dropdown-item change_password">
                     <i class="fas fa-unlock-alt mr-2"></i>Change Password
-                </a>
+                </button>
             </div>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../model/logout.php" onclick="return confirm('Do you want to logout?');" title="Logout?">
-                <i class="fas fa-power-off"></i>
-            </a>
+            <button type="button" class="btn btn-link logout" title="Logout?">
+                <i class="fas fa-power-off text-danger"></i>
+            </button>
         </li>
     </ul>
 </nav>

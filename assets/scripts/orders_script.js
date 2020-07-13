@@ -44,7 +44,7 @@ $(document).ready(function(){
 		swal({
 		  	title: "Payment settled?",
 		  	text: "Once click, this order will marked as paid!",
-		  	icon: "info",
+		  	icon: "success",
 		  	buttons: true,
 		  	dangerMode: false,
 		})

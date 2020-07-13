@@ -1,8 +1,6 @@
 <?php 
     include '../server/server.php';
-    if(!$_SESSION['username']){
-        header("location: ../login.php");
-    }
+    include '../model/check_auth.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +131,7 @@
                         <a class="btn btn-lg btn-secondary mr-2" href="dashboard.php" title="Dashboard" id="pos-buttons">
                             <i class="fas fa-th-large"></i> Dashboard
                         </a>
-                        <a class="btn btn-lg btn-danger mr-2" title="Logout" id="pos-buttons">
+                        <a class="btn btn-lg btn-danger mr-2 logout" title="Logout" id="pos-buttons">
                             <i class="fas fa-power-off"></i> Logout
                         </a>
                 </div>

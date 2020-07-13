@@ -4,25 +4,25 @@ $(document).ready(function(){
 
 	$('.create-profile').on('click', function(){
 		var formdata = new FormData(document.getElementById("profile_form"));
+
 		$.ajax({
 			type: "POST",
-				url: "../model/profile.php",
-				dataType: "json",
-				data: formdata,
-				processData: false,
-				contentType: false,
-				cache: false,
-				success: function(response) {
-					if (response.success == true) {
-						toastr.success(response.message);
-						setTimeout(function() {
-							window.location.reload(1);
-						}, 2000);
-					} else {
-						toastr.error(response.message);
-					}
+			url: "../model/profile.php",
+			dataType: "json",
+			data: formdata,
+			processData: false,
+			contentType: false,
+			cache: false,
+			success: function(response) {
+				if (response.success == true) {
+					toastr.success(response.message);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 2000);
+				} else {
+					toastr.error(response.message);
 				}
-
+			}
 		});
 
 		return false;
@@ -36,25 +36,24 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: "POST",
-				url: "../model/task.php",
-				dataType: "json",
-				data: formdata,
-				processData: false,
-				contentType: false,
-				cache: false,
-				success: function(response) {
-					if (response.success == true) {
-						toastr.success(response.message);
-						$('#task_modal').modal('hide');
-						setTimeout(function() {
-							window.location.reload(1);
-						}, 2000);
+			url: "../model/task.php",
+			dataType: "json",
+			data: formdata,
+			processData: false,
+			contentType: false,
+			cache: false,
+			success: function(response) {
+				if (response.success == true) {
+					toastr.success(response.message);
+					$('#task_modal').modal('hide');
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 2000);
 
-					} else {
-						toastr.error(response.message);
-					}
+				} else {
+					toastr.error(response.message);
 				}
-
+			}
 		});
 
 		return false;
@@ -68,30 +67,26 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: "POST",
-				url: "../model/task_done.php",
-				method: "POST",
-				dataType: "json",
-				data: {
-					id:id
-				},
-				success: function(response) {
-					if (response.success == true) {
+			url: "../model/task_done.php",
+			dataType: "json",
+			data: {
+				id:id
+			},
+			success: function(response) {
+				if (response.success == true) {
 
-						toastr.success(response.message);
+					toastr.success(response.message);
 
-						setTimeout(function() {
-							window.location.reload(1);
-						}, 2000);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 2000);
 
-					} else {
-						toastr.error(response.message);
-					}
+				} else {
+					toastr.error(response.message);
 				}
-
+			}
 		});
-
 		return false;
-
 	});
 
 	// ======================= Delete Task ====================
@@ -101,30 +96,26 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: "POST",
-				url: "../model/task_delete.php",
-				method: "POST",
-				dataType: "json",
-				data: {
-					id:id
-				},
-				success: function(response) {
-					if (response.success == true) {
+			url: "../model/task_delete.php",
+			dataType: "json",
+			data: {
+				id:id
+			},
+			success: function(response) {
+				if (response.success == true) {
 
-						toastr.success(response.message);
+					toastr.success(response.message);
 
-						setTimeout(function() {
-							window.location.reload(1);
-						}, 2000);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 2000);
 
-					} else {
-						toastr.error(response.message);
-					}
+				} else {
+					toastr.error(response.message);
 				}
-
+			}
 		});
-
 		return false;
-
 	});
 
 	//  ======== Show edit form ==============
@@ -152,29 +143,26 @@ $(document).ready(function(){
 		var formdata = new FormData(document.getElementById("edit_task_form"+id));
 		$.ajax({
 			type: "POST",
-				url: "../model/edit_task.php",
-				dataType: "json",
-				data: formdata,
-				processData: false,
-				contentType: false,
-				cache: false,
-				success: function(response) {
-					if (response.success == true) {
-						toastr.success(response.message);
+			url: "../model/edit_task.php",
+			dataType: "json",
+			data: formdata,
+			processData: false,
+			contentType: false,
+			cache: false,
+			success: function(response) {
+				if (response.success == true) {
+					toastr.success(response.message);
 
-						setTimeout(function() {
-							window.location.reload(1);
-						}, 2000);
+					setTimeout(function() {
+						window.location.reload(1);
+					}, 2000);
 
-					} else {
-						toastr.error(response.message);
-					}
+				} else {
+					toastr.error(response.message);
 				}
-
+			}
 		});
-
 		return false;
-
 	});
 
 });

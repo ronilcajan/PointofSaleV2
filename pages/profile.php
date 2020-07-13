@@ -1,10 +1,7 @@
 <?php 
     include '../server/server.php';
-
-    if(!$_SESSION['username']){
-        header("location: ../login.php");
-    }
-        include '../model/fetch_profile.php';
+    include '../model/check_auth.php';
+    include '../model/fetch_profile.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,10 +48,12 @@
                                 <div class="card-body box-profile">
                                     <div class="text-center">
                                     <?php if (!empty($pic)):?>
-                                        
+                                        <img class="profile-user-img img-fluid img-circle"
+                                       src="../assets/images/avatars/<?php echo $pic;?>"
+                                       alt="User profile picture">
                                     <?php else: ?>
                                         <img class="profile-user-img img-fluid img-circle"
-                                       src="../assets/dist/img/user4-128x128.jpg"
+                                       src="../assets/images/avatars/avatar.png"
                                        alt="User profile picture">
                                     <?php endif ?>
                                     </div>
@@ -65,7 +64,6 @@
                                         <h3 class="profile-username text-center">Your name here</h3>
                                         <p class="text-muted text-center">Your position here</p>
                                 <?php endif ?>
-                                <a href="#" class="btn btn-primary btn-block"><b>Change Profile</b></a>
                               </div>
                               <!-- /.card-body -->
                             </div>
@@ -210,8 +208,8 @@
                                                                 </td>
                                                                 <input type="hidden" name="id" value="<?php echo $tsk['task_id'];?>">
                                                                 <td>
-                                                                    <button type="button" class="btn btn-sm btn-link edit_task_submit" title="Delete" id="<?php echo $tsk['task_id'];?>"><i class="fa fa-check-circle text-success"></i></button>
-                                                                    <button type="button" class="btn btn-sm btn-link cancel_edit_task" title="Delete" id="<?php echo $tsk['task_id'];?>"><i class="fa fa-times-circle text-danger"></i></button>
+                                                                    <button type="button" class="btn btn-sm btn-link edit_task_submit" title="Update" id="<?php echo $tsk['task_id'];?>"><i class="fa fa-check-circle text-success"></i></button>
+                                                                    <button type="button" class="btn btn-sm btn-link cancel_edit_task" title="Cancel" id="<?php echo $tsk['task_id'];?>"><i class="fa fa-times text-danger"></i></button>
                                                                 </td>
                                                                 </form>
                                                             </tr>
@@ -231,8 +229,17 @@
                                         </div>
                                         <!-- Settings -->
                                         <div class="tab-pane" id="settings">
-                                            <form class="form-horizontal" id="profile_form" method="POST">
-                                                <?php if(empty($name)):?>
+                                            <form class="form-horizontal" id="profile_form" method="POST" enctype="">
+                                                <input type="hidden" name="size" value="1000000">
+                                                <div class="form-group row">
+                                                    <label for="inputName2" class="col-sm-2 col-form-label">Profile Image</label>
+                                                    <div class="col-sm-10">
+                                                      <input type="file" name="img" id="inputName2" accept="image/*" value="<?php echo $pic; ?>" required>
+                                                    </div>
+                                                </div>
+                                                
+                                                <?php if(empty($education) && empty($name) && empty($location) && empty($email) && empty($number) && empty($notes)):?>
+
                                                 <div class="form-group row">
                                                     <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                                     <div class="col-sm-10">
@@ -271,8 +278,8 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="offset-sm-2 col-sm-10">
-                                                        <input type="hidden" name="profile" value="create">
-                                                      <button type="submit" class="btn btn-primary create-profile">Submit</button>
+                                                        <input type="hidden" name="create">
+                                                        <button type="submit" name="create" class="btn btn-primary create-profile">Submit</button>
                                                     </div>
                                                 </div>
 
@@ -316,8 +323,8 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="offset-sm-2 col-sm-10">
-                                                        <input type="hidden" name="profile" value="edit">
-                                                        <button type="submit" class="btn btn-primary create-profile">Update</button>
+                                                        <input type="hidden" name="edit">
+                                                        <button type="submit" name="edit" class="btn btn-primary create-profile">Update</button>
                                                     </div>
                                                 </div>
                                             <?php endif ?>
