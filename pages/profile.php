@@ -49,7 +49,7 @@
                                     <div class="text-center">
                                     <?php if (!empty($pic)):?>
                                         <img class="profile-user-img img-fluid img-circle"
-                                       src="../assets/images/avatars/<?php echo $pic;?>"
+                                       src="../uploads/avatar/<?php echo $pic;?>"
                                        alt="User profile picture">
                                     <?php else: ?>
                                         <img class="profile-user-img img-fluid img-circle"

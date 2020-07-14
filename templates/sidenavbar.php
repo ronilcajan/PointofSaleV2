@@ -11,7 +11,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <?php if(!empty($n)):?>
             <div class="image">
-                <img src="../assets/images/avatars/<?php echo $im ?>" class="img-circle elevation-2" alt="User Image">
+                <img src="../uploads/avatar/<?php echo $im ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?php echo $n;?></a>

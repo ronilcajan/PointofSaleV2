@@ -28,50 +28,57 @@ $(document).ready(function() {
                     type: 'password'
                 }
             },
-            button: {
-                text: 'Confirm Password',
-                closeModal: false,
+            buttons: {
+                cancel: true,
+                button: {
+                    text:'Confirm Password',
+                    closeModal: false,
+                } 
             },
         })
         .then(name => {
-            swal({
-                title: 'Change Password',
-                text: 'Confirm your password',
-                closeOnClickOutside: false,
-                content: {
-                    element: 'input',
-                    attributes: {
-                        placeholder: "Confirm your password",
-                        type: 'password'
-                    }
-                },
-                button: {
-                    text: 'Change'
-                },
-            })
-            .then( pass => {
-                if(name == pass){
-                    $.ajax({
-                        type: "POST",
-                        url: "../model/change_password.php",
-                        data: {
-                            pass: pass,
-                        },
-                        dataType: "json",
-                        cache: false,
-                        success: function(response) {
-                            if (response.success == true) {
-                                toastr.success(response.message);
-                            } else {
-                                toastr.error(response.message);
-                            }
+            if(name != null){
+                swal({
+                    title: 'Change Password',
+                    text: 'Confirm your password',
+                    closeOnClickOutside: false,
+                    content: {
+                        element: 'input',
+                        attributes: {
+                            placeholder: "Confirm your password",
+                            type: 'password'
                         }
-                    })
-                }else{
-                    toastr.warning("Password did not match!");
-                }
+                    },
+                    button: {
+                        text: 'Change'
+                    },
+                })
+                .then( pass => {
+                    if(name == pass){
+                        $.ajax({
+                            type: "POST",
+                            url: "../model/change_password.php",
+                            data: {
+                                pass: pass,
+                            },
+                            dataType: "json",
+                            cache: false,
+                            success: function(response) {
+                                if (response.success == true) {
+                                    toastr.success(response.message);
+                                } else {
+                                    toastr.error(response.message);
+                                }
+                            }
+                        })
+                    }else{
+                        toastr.error("Password did not match!");
+                    }
 
-            });
+                });
+            }else{
+                toastr.warning("Password not change!");
+            }
         });
     });
 

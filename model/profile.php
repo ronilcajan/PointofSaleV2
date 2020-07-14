@@ -16,7 +16,7 @@
 	$newimg = date('dmYHis').str_replace(" ", "", $img);
 
 	// image file directory
-  	$target = "../assets/images/avatars/".basename($newimg);
+  	$target = "../uploads/avatar/".basename($newimg);
 
   	// image resize
 
