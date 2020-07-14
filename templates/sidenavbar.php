@@ -102,6 +102,39 @@
                     </a>
                 </li>
                 <?php endif ?>
+                <?php if(strpos($_SERVER['REQUEST_URI'],'products')>0):?>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-boxes"></i>
+                        <p>
+                            Products
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <small>
+                        <li class="nav-item">
+                            <a href="products_view.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View Products</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="products_view.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Products</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="products_view.php" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Edit Products</p>
+                            </a>
+                        </li>
+                    </small>    
+                    </ul>
+                </li>
+                <?php else: ?>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-boxes"></i>
@@ -113,19 +146,19 @@
                     <ul class="nav nav-treeview">
                         <small>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="../products/products_view.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>View Products</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="../products/products_view.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Products</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
+                            <a href="../products/products_view.php" class="nav-link">
                               <i class="far fa-circle nav-icon"></i>
                               <p>Edit Products</p>
                             </a>
@@ -133,6 +166,7 @@
                     </small>    
                     </ul>
                 </li>
+                <?php endif ?>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>

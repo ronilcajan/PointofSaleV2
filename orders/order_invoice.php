@@ -140,10 +140,10 @@
                                     <!-- accepted payments column -->
                                     <div class="col-6">
                                         <p class="lead">Payment Methods:</p>
-                                        <img src="../assets/dist/img/credit/visa.png" alt="Visa">
-                                        <img src="../assets/dist/img/credit/mastercard.png" alt="Mastercard">
-                                        <img src="../assets/dist/img/credit/american-express.png" alt="American Express">
-                                        <img src="../assets/dist/img/credit/paypal2.png" alt="Paypal">
+                                        <img src="../assets/images/credit/visa.png" alt="Visa">
+                                        <img src="../assets/images/credit/mastercard.png" alt="Mastercard">
+                                        <img src="../assets/images/credit/american-express.png" alt="American Express">
+                                        <img src="../assets/images/credit/paypal2.png" alt="Paypal">
 
                                         <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
                                           This payment method will be supported in the near future.

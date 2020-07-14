@@ -1,5 +1,11 @@
-$(document).ready(function(){
+//======= profile image preview before upload =====
+var profileloadFile = function(event) {
+	var output = document.getElementById("output");
+	output.src = URL.createObjectURL(event.target.files[0]);
+};
+	
 
+$(document).ready(function(){
 	// ==================== Create Profile ================
 
 	$('.create-profile').on('click', function(){

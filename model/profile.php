@@ -18,8 +18,6 @@
 	// image file directory
   	$target = "../uploads/avatar/".basename($newimg);
 
-  	// image resize
-
   	// suppurted file
 	$supported_image = array('image/gif', 'image/jpg', 'image/jpeg', 'image/png');
 

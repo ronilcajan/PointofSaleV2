@@ -50,11 +50,11 @@
                                     <?php if (!empty($pic)):?>
                                         <img class="profile-user-img img-fluid img-circle"
                                        src="../uploads/avatar/<?php echo $pic;?>"
-                                       alt="User profile picture">
+                                       alt="User profile picture" id="output">
                                     <?php else: ?>
                                         <img class="profile-user-img img-fluid img-circle"
                                        src="../assets/images/avatars/avatar.png"
-                                       alt="User profile picture">
+                                       alt="User profile picture" id="output">
                                     <?php endif ?>
                                     </div>
                                     <?php if (!empty($name)):?>
@@ -229,12 +229,15 @@
                                         </div>
                                         <!-- Settings -->
                                         <div class="tab-pane" id="settings">
-                                            <form class="form-horizontal" id="profile_form" method="POST" enctype="">
+                                            <form class="form-horizontal" id="profile_form" method="POST" enctype="multipart/form-data">
                                                 <input type="hidden" name="size" value="1000000">
                                                 <div class="form-group row">
-                                                    <label for="inputName2" class="col-sm-2 col-form-label">Profile Image</label>
-                                                    <div class="col-sm-10">
-                                                      <input type="file" name="img" id="inputName2" accept="image/*" value="<?php echo $pic; ?>" required>
+                                                    <label for="inputImage" class="col-sm-2 col-form-label">Profile Image</label>
+                                                    <div class="input-group col-sm-10">
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="exampleInputFile" accept="image/*" onchange="profileloadFile(event)" name="img" required>
+                                                            <label class="custom-file-label" for="exampleInputFile">Choose Profile Picture</label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 
