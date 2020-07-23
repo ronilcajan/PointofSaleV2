@@ -49,7 +49,7 @@ $columns = array(
         'db' => 'sell_price',   
         'dt' => 3,
         'formatter' => function( $d, $row ) {
-            return 'P '.number_format($d);
+            return number_format($d);
         }
     ),
     array( 'db' => 'stocks', 'dt'        => 4),
@@ -74,9 +74,9 @@ $columns = array(
                       <i class="fa fa-cog"> </i>
                     </button>
                     <div class="dropdown-menu" role="menu">
-                      <button type="button" class="btn btn-link text-info dropdown-item" id="'.$d.'" title="View products"><span class=""><i class="fa fa-eye"> </i></span> View</button> 
-                      <button type="button" class="btn btn-link edit_products text-success dropdown-item" id="'.$d.'" title="edit products"><span class=""><i class="fa fa-edit"> </i></span> Edit</button>
-                      <button type="button" class="btn btn-link remove_products text-danger dropdown-item" id="'.$d.'" title="Remove products"><span class=""><i class="fa fa-minus-circle"> </i></span> Remove</button>
+                      <a type="button" href="product_details.php?product_no='.$row[0].'" class="btn btn-link text-info dropdown-item"><span class=""><i class="fa fa-eye"> </i></span> View</a> 
+                      <button type="button" class="btn btn-link edit_products text-success dropdown-item" id="'.$d.'"><span class=""><i class="fa fa-edit"> </i></span> Edit</button>
+                      <button type="button" class="btn btn-link remove_products text-danger dropdown-item" id="'.$d.'"><span class=""><i class="fa fa-minus-circle"> </i></span> Remove</button>
                     </div>';
         }
     ),

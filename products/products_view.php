@@ -17,6 +17,7 @@
             <?php include '../templates/sidenavbar.php'; ?>
             <!-- /sidebar -->
         <!-- /navbar -->
+        
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -47,13 +48,13 @@
                         <!-- /.card-header -->
                         <div class="card-body">
                             <a type="button" href="add_products.php" class="btn btn-primary btn-sm mb-2" title="Add task"><i class="fa fa-plus"></i> Products</a>
-                            <table id="products_table" class="table table-bordered table-striped">
+                            <table id="products_table" class="table table-bordered table-striped table-sm">
                                 <thead>
                                     <tr>
                                         <th>Srl.#</th>
                                         <th>ProductName</th>
                                         <th>Description</th>
-                                        <th>Price</th>
+                                        <th>Price(Php)</th>
                                         <th>Stocks</th>
                                         <th>Unit</th>
                                         <th>Min.Stocks</th>
@@ -69,7 +70,7 @@
                                         <th>Srl.#</th>
                                         <th>ProductName</th>
                                         <th>Description</th>
-                                        <th>Price</th>
+                                        <th>Price(Php)</th>
                                         <th>Stocks</th>
                                         <th>Unit</th>
                                         <th>Min.Stocks</th>

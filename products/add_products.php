@@ -51,10 +51,17 @@
                             <div class="form-group">
                                 <label for="inputText">Serial No.</label>
                                 <div class="input-group col-sm-6">
+                                    <?php if(!isset($_GET['product_no'])):?>
                                     <input type="text" class="form-control rounded-1 serial" id="inputText" placeholder="Enter product serial number/barcode..." name="product_no" autofocus required>
                                     <span class="input-group-append">
                                         <button type="button" class="btn btn-info btn-flat serial_search"><i class="fa fa-search"></i></button>
                                     </span>
+                                    <?php else: ?>
+                                    <input type="text" class="form-control rounded-1 serial" id="inputTextserial" placeholder="Enter product serial number/barcode..." name="product_no" value="<?php echo $_GET['product_no'];?>" autofocus required>
+                                    <span class="input-group-append">
+                                        <button type="button" class="btn btn-info btn-flat serial_search"><i class="fa fa-search"></i></button>
+                                    </span>
+                                    <?php endif ?>
                                 </div>
                             </div>
                             <div class="form-group">

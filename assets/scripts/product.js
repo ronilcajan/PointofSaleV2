@@ -10,7 +10,7 @@ $(document).ready(function(){
         "processing": true,
         "serverSide": true,
         "autoWidth": false,
-        "ajax": "../model/view_products.php"
+        "ajax": "../model/product_datatable.php"
     });
 
 	// ========== Insert/Edit Products ==============
@@ -78,7 +78,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-
+	// =========== Search Products ==============
 	$('.serial_search').on('click', function(){
 		var serial_no = $('.serial').val();
 
@@ -116,7 +116,8 @@ $(document).ready(function(){
 
 		}
 	});
-	// ========== Delete Products 
+
+	// ========== Delete Products ================
 	$('#products_table').on('click','tbody tr .remove_products', function(){
 		var id = $(this).attr('id');
 
@@ -128,6 +129,7 @@ $(document).ready(function(){
 		  	dangerMode: true,
 		})
 		.then((willDelete) => {
+
 		  	if (willDelete) {
 
 		  		$.ajax({
@@ -149,6 +151,25 @@ $(document).ready(function(){
 					}
 				});
 		    	
+		  	} 
+		});
+	});
+
+	// ========== Edit Products redirect ================
+	$('#products_table').on('click','tbody tr .edit_products', function(){
+		var serial_no = $(this).attr('id');
+
+		swal({
+		  	title: "Edit this product?",
+		  	text: "You will be redirected to the edit product page!",
+		  	icon: "info",
+		  	buttons: true,
+		  	dangerMode: false,
+		})
+		.then((edit_products) => {
+			
+		  	if (edit_products) {
+				window.location.href='../products/add_products.php?product_no='+serial_no;
 		  	} 
 		});
 	});
