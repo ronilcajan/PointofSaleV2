@@ -94,7 +94,7 @@ $sql_details = array(
  */
 $joinQuery = "FROM sales JOIN customers ON sales.customer_id=customers.customer_id";
 // $extraCondition = "`id_client`=".$ID_CLIENT_VALUE;
-require( 'ssp.php' );
+require( '../assets/plugins/datatables/ssp.php' );
  
 echo json_encode(
     SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns,$joinQuery)

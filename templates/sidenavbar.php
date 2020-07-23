@@ -120,15 +120,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="products_view.php" class="nav-link">
+                            <a href="add_products.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Products</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="products_view.php" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Edit Products</p>
+                                <p>Add/Edit Products</p>
                             </a>
                         </li>
                     </small>    
@@ -152,15 +146,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="../products/products_view.php" class="nav-link">
+                            <a href="../products/add_products.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Products</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../products/products_view.php" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Edit Products</p>
+                                <p>Add/Edit Products</p>
                             </a>
                         </li>
                     </small>    

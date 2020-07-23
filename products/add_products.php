@@ -53,7 +53,7 @@
                                 <div class="input-group col-sm-6">
                                     <input type="text" class="form-control rounded-1 serial" id="inputText" placeholder="Enter product serial number/barcode..." name="product_no" autofocus required>
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-info btn-flat"><i class="fa fa-search"></i></button>
+                                        <button type="button" class="btn btn-info btn-flat serial_search"><i class="fa fa-search"></i></button>
                                     </span>
                                 </div>
                             </div>
@@ -102,9 +102,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputText">Image Preview</label>
-                                <div>
-                                <img class="img-fluid img-thumbnail" width="150" height="150" src="../assets/images/product-preview.png" alt="product image preview" id="product_output">
-                            </div>
+                                <div class="img-pr">
+                                    <img class="img-fluid img-thumbnail img-preview" width="150" height="150" src="../assets/images/product-preview.png" alt="product image preview" id="product_output"/>
+                                </div>
                             </div>
                         </div>
                         <!-- /.card-body -->

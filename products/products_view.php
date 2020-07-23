@@ -50,8 +50,8 @@
                             <table id="products_table" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Serial No.</th>
-                                        <th>Name</th>
+                                        <th>Srl.#</th>
+                                        <th>ProductName</th>
                                         <th>Description</th>
                                         <th>Price</th>
                                         <th>Stocks</th>
@@ -63,23 +63,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>03219392</td>
-                                        <td>Shoes</td>
-                                        <td>Best for men shoes</td>
-                                        <td>1000</td>
-                                        <td>20</td>
-                                        <td>box</td>
-                                        <td>10</td>
-                                        <td>New</td>
-                                        <td>Top</td>
-                                        <td>Edit delete</td>
-                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>Serial No.</th>
-                                        <th>Name</th>
+                                        <th>Srl.#</th>
+                                        <th>ProductName</th>
                                         <th>Description</th>
                                         <th>Price</th>
                                         <th>Stocks</th>
@@ -107,5 +95,6 @@
     </div>
     <!-- ./wrapper -->
     <?php include '../templates/footer-links.php'; ?>
+    <script src="../assets/scripts/product.js"></script>
     </body>
 </html>

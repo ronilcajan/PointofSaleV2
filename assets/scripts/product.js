@@ -5,7 +5,14 @@ var productloadFile = function(event) {
 };
 
 $(document).ready(function(){
+	// ========= Products DataTables =========
+	$('#products_table').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "../model/view_products.php"
+    });
 
+	// ========== Insert/Edit Products ==============
 	$('.create-products').on('click', function(){
 		var formdata = new FormData(document.getElementById("product_form"));
 
@@ -68,6 +75,81 @@ $(document).ready(function(){
 			}
 		}
 		return false;
+	});
+
+
+	$('.serial_search').on('click', function(){
+		var serial_no = $('.serial').val();
+
+		if(serial_no.trim() != ''){
+
+			$.ajax({
+				type: "POST",
+				url: "../model/edit_products.php",
+				dataType: "json",
+				data: {serial_no:serial_no.trim()},
+				cache: false,
+				success: function(response) {
+					if (response.success == true) {
+						toastr.success(response.message);
+
+						$('.name').val(response.products.name);
+						$('.description').val(response.products.description);
+						$('.price').val(response.products.sell_price);
+						$('.stocks').val(response.products.stocks);
+						$('.unit').val(response.products.unit);
+						$('.min_stocks').val(response.products.min_stocks);
+						$('.remarks').val(response.products.remarks);
+						$('.location').val(response.products.location);
+						$('.img-preview').attr('src', "../uploads/products/"+response.products.product_image);
+
+					} else {
+						toastr.error(response.message);
+					}
+				}
+			});
+
+		}else{
+
+			toastr.warning("Please enter serial number!");
+
+		}
+	});
+	// ========== Delete Products 
+	$('#products_table').on('click','tbody tr .remove_products', function(){
+		var id = $(this).attr('id');
+
+		swal({
+		  	title: "Are you sure?",
+		  	text: "Once removed, you will not be able to recover this product!",
+		  	icon: "warning",
+		  	buttons: true,
+		  	dangerMode: true,
+		})
+		.then((willDelete) => {
+		  	if (willDelete) {
+
+		  		$.ajax({
+					type: "POST",
+					url: "../model/remove_product.php",
+					data: {
+						id: id
+					},
+					dataType: "json",
+					cache: false,
+					success: function(response) {
+						if (response.success == true) {
+							toastr.success(response.message);
+							$("#order_table").DataTable().ajax.reload();
+						} else {
+							$("#loading-screen").hide();
+							toastr.error(response.message);
+						}
+					}
+				});
+		    	
+		  	} 
+		});
 	});
 
 });

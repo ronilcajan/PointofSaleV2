@@ -77,6 +77,7 @@ $columns = array(
             }
         },
         'field' => 'status'),
+
     array( 
         'db' => 'order_no',
         'dt' => 6, 
@@ -92,6 +93,7 @@ $columns = array(
             }
         },
         'field' => 'order_no' ),
+
 
     array( 'db' => 'lastname', 'dt' => 7, 'field' => 'lastname' ),
     array( 'db' => 'customers.customer_id', 'dt' => 8, 'field' => 'customer_id' ),
@@ -112,7 +114,7 @@ $sql_details = array(
  */
 $joinQuery = "FROM orders JOIN customers ON orders.customer_id=customers.customer_id";
 // $extraCondition = "ORDER BY customers.customer_id ASC";
-require( 'ssp.php' );
+require( '../assets/plugins/datatables/ssp.php' );
  
 echo json_encode(
     SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns,$joinQuery)
