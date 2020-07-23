@@ -7,19 +7,19 @@
 
 
 	if($id != ''){
-		$query 		= "DELETE FROM orders WHERE order_no = '$id'";
+		$query 		= "DELETE FROM products WHERE product_no = '$id'";
 		
 		$result 	= $conn->query($query);
 		
 		if($result === true){
-			$validation['message'] = 'Order has been removed!';
+			$validation['message'] = 'Product has been removed!';
 			$validation['success'] = true;
 		}else{
-			$validation['message'] = 'Order cannot be removed!';
+			$validation['message'] = 'Product cannot be removed!';
 			$validation['success'] = false;
 		}
 	}else{
-		$validation['message'] = 'Missing order number!';
+		$validation['message'] = 'Missing product serial number!';
 		$validation['success'] = false;
 	}
 

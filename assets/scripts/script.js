@@ -86,12 +86,14 @@ $(document).ready(function() {
 	$('#order_table').DataTable({
         "processing": true,
         "serverSide": true,
+        "autoWidth": false,
         "ajax": "../model/order_datatable.php"
     });
 
 	$('#sales_table').DataTable({
         "processing": true,
         "serverSide": true,
+        "autoWidth": false,
         "ajax": "../model/sales_datatable.php"
     });
 });

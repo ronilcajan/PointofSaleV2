@@ -9,6 +9,7 @@ $(document).ready(function(){
 	$('#products_table').DataTable({
         "processing": true,
         "serverSide": true,
+        "autoWidth": false,
         "ajax": "../model/view_products.php"
     });
 
@@ -140,7 +141,7 @@ $(document).ready(function(){
 					success: function(response) {
 						if (response.success == true) {
 							toastr.success(response.message);
-							$("#order_table").DataTable().ajax.reload();
+							$("#products_table").DataTable().ajax.reload();
 						} else {
 							$("#loading-screen").hide();
 							toastr.error(response.message);
