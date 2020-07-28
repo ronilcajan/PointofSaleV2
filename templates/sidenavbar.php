@@ -208,6 +208,33 @@
                     </ul>
                 </li>
                 <?php endif ?>
+                <?php if(strpos($_SERVER['REQUEST_URI'],'suppliers')>0):?>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-user-tie"></i>
+                        <p>
+                            Suppliers
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <small>
+                        <li class="nav-item">
+                            <a href="../suppliers/suppliers_list.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Suppliers List</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../suppliers/add_suppliers.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add Suppliers</p>
+                            </a>
+                        </li>
+                        </small>
+                    </ul>
+                </li>
+                <?php else: ?>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user-tie"></i>
@@ -217,26 +244,23 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <small>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="../suppliers/suppliers_list.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>View Suppliers</p>
+                                <p>Suppliers List</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="../suppliers/add_suppliers.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Suppliers</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Edit Suppliers</p>
-                            </a>
-                        </li>
+                        </small>
                     </ul>
                 </li>
+                <?php endif ?>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shipping-fast"></i>

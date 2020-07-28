@@ -14,6 +14,7 @@
 	$number 	= $row['contact_no'];
 	$pic		= $row['customer_img'];
 
+	// === Pagination query ======
 	if(isset($_GET['pageno'])){
 		$pageno = $_GET['pageno'];
 	}else{
@@ -30,7 +31,7 @@
  	$total_pages = ceil($total_rows / $no_of_records_per_page);
 
 	$sql = "SELECT * FROM sales JOIN customers ON customers.customer_id=sales.customer_id where customers.customer_id='$customer_id' ORDER BY sales.date DESC LIMIT $offset, $no_of_records_per_page";
-	// $sql = "SELECT * FROM sales JOIN customers ON customers.customer_id=sales.customer_id where customers.customer_id='$customer_id' ORDER BY sales.date DESC";
+
 	$res = $conn->query($sql);
 
 
