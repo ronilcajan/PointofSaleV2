@@ -16,4 +16,3 @@
 <script src="../assets/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="../assets/scripts/script.js"></script>
-<script src="../assets/scripts/orders_script.js"></script>

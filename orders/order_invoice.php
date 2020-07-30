@@ -204,5 +204,6 @@
     </div>
     <!-- ./wrapper -->
     <?php include '../templates/footer-links.php'; ?>
+    <script src="assets/scripts/orders_script.js"></script>
     </body>
 </html>

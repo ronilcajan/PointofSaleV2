@@ -261,35 +261,59 @@
                     </ul>
                 </li>
                 <?php endif ?>
+                <?php if(strpos($_SERVER['REQUEST_URI'],'delivery')>0):?>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fas fa-shipping-fast"></i>
+                        <p>
+                            Delivery
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview" style="display: block;">
+                        <small>
+                        <li class="nav-item">
+                            <a href="delivery.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Deliveries</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="add_delivery.php" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Delivery</p>
+                            </a>
+                        </li>
+                        </small>
+                    </ul>
+                </li>
+                <?php else: ?>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shipping-fast"></i>
                         <p>
-                            Deliveries
+                            Delivery
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <small>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav.html" class="nav-link">
+                            <a href="../delivery/delivery.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>View Deliveries</p>
+                                <p>Deliveries</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                            <a href="../delivery/add_delivery.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add Deliveries</p>
+                                <p>New Delivery</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
-                              <i class="far fa-circle nav-icon"></i>
-                              <p>Edit Suppliers</p>
-                            </a>
-                        </li>
+                        </small>
                     </ul>
                 </li>
+                <?php endif ?>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-line"></i>
